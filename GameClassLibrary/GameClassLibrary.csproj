@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2E7859A3-0D15-43D4-B2A0-6BB868E5FF52}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GameClassLibrary</RootNamespace>
+    <AssemblyName>GameClassLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClientServer\IClient.cs" />
+    <Compile Include="ClientServer\IServer.cs" />
+    <Compile Include="ClientServer\OperationResult.cs" />
+    <Compile Include="ClientServer\Server.cs" />
+    <Compile Include="GameObject\GameMap.cs" />
+    <Compile Include="GameObject\GameSession.cs" />
+    <Compile Include="GameObject\GameState.cs" />
+    <Compile Include="GameObject\IGame.cs" />
+    <Compile Include="GameObject\IMap.cs" />
+    <Compile Include="GameObject\TypeCell.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Helloworld\TestConsoleServer\TestConsoleServer.csproj">
+      <Project>{edf491ec-9bf4-416d-8c63-9c5facdfa546}</Project>
+      <Name>TestConsoleServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Helloworld\TestConsole\TestConsole.csproj">
+      <Project>{dc2a11ed-8339-4374-95cd-b05487f25fa5}</Project>
+      <Name>TestConsole</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenData\OpenData\OpenData.csproj">
+      <Project>{a6524ec9-d2c2-45f5-8cbe-3b1a2e0a9c5e}</Project>
+      <Name>OpenData</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
